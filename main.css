@@ -1,0 +1,27 @@
+.the-void {
+	background-color: black;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+
+.starpoint {
+	/* background-color: #f0f; */
+	height: 1px;
+	width: 1px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.star {
+	/* background-color: white;
+	height: 3px;
+	width: 3px; */
+	height: 86px;
+	width: 71px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
