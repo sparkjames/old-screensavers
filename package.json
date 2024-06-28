@@ -5,8 +5,8 @@
   "browserslist": "> 0.5%, last 2 versions, not dead, iOS >= 7",
   "scripts": {
     "start": "parcel src/starfield.html",
-    "watch": "parcel watch src/starfield.html",
-    "build": "parcel build src/starfield.html"
+    "watch": "parcel watch src/starfield.html --public-url ./",
+    "build": "parcel build src/starfield.html --public-url ./"
   },
   "author": "James Pfleiderer",
   "license": "MIT",
