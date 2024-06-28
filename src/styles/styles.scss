@@ -19,15 +19,42 @@
 }
 
 .star {
-	/* background-color: white;
-	height: 3px;
-	width: 3px; */
-	height: 86px;
-	width: 71px;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
+
+
+
+.the-void.graphic--windows {
+
+	.star {
+		height: 86px;
+		width: 71px;
+	}
+
+}
+
+
+
+.the-void.graphic--stars {
+
+	.star {
+		background-color: white;
+		height: 3px;
+		width: 3px;
+
+		svg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+}
+
+
+
+
 
 .controls {
 	background-color: rgba(255, 255, 255, 0.66);

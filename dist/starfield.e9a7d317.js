@@ -584,6 +584,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"hQ4aG":[function(require,module,exports) {
+const theVoid = document.querySelector(".the-void");
 /**
 	 * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 	 */ function getRandomIntInclusive(min, max) {
@@ -706,6 +707,24 @@ let stars = initStars();
 stars.map((star)=>{
     star = resetStarPosition(star);
     return star;
+});
+/**
+ * Controls
+ */ const graphicTogglesOnChange = (e)=>{
+    const radioEl = e.target;
+    console.log("radioEl = ", radioEl);
+    const acceptableValues = [
+        "windows",
+        "stars"
+    ];
+    if (acceptableValues.indexOf(radioEl.value) > -1) {
+        theVoid.classList.remove("graphic--windows", "graphic--stars");
+        theVoid.classList.add(`graphic--${radioEl.value}`);
+    }
+};
+const graphicToggles = document.querySelectorAll(".controls-radio--graphic");
+graphicToggles.forEach((el)=>{
+    el.addEventListener("change", graphicTogglesOnChange);
 });
 
 },{}]},["7WgsS","hQ4aG"], "hQ4aG", "parcelRequire94c2")

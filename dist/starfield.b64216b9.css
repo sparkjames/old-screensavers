@@ -67,11 +67,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .star {
-  width: 71px;
-  height: 86px;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.the-void.graphic--windows .star {
+  width: 71px;
+  height: 86px;
+}
+
+.the-void.graphic--stars .star {
+  background-color: #fff;
+  width: 3px;
+  height: 3px;
+}
+
+.the-void.graphic--stars .star svg {
+  visibility: hidden;
+  display: none;
 }
 
 .controls {
