@@ -1,5 +1,14 @@
 @import './reset';
 
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	font-size: 1rem;
+}
+
 .the-void {
 	background-color: black;
 	overflow: hidden;
@@ -57,12 +66,44 @@
 
 
 .controls {
-	background-color: rgba(255, 255, 255, 0.66);
-	margin-left: auto;
-	margin-right: auto;
+	background-color: lightgray;
 	max-width: 640px;
-	padding: 1.5rem;
 	position: absolute;
 	bottom: 5vh;
+	left: 50%;
+	transform: translateX(-50%);
 	width: 100%;
+}
+
+.controls-title {
+	background-color: blue;
+	border: 2px solid black;
+	border-top-color: white;
+	border-right-color: white;
+	color: white;
+	font-weight: bold;
+	padding: .5rem;
+	text-align: center;
+	width: 100%;
+}
+
+.controls-group {
+	border: 1px solid black;
+	margin: 1rem;
+	padding: .5rem;
+}
+
+.controls-heading {
+	background-color: lightgray;
+	display: inline-block;
+	margin-bottom: -.5rem;
+	padding: 0 .25em;
+	position: relative;
+	top: -.8em;
+	width: auto;
+}
+
+.controls-list {
+	display: flex;
+	gap: 1rem;
 }

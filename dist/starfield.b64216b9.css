@@ -49,6 +49,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
 .the-void {
   background-color: #000;
   width: 100%;
@@ -89,13 +98,44 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .controls {
-  background-color: #ffffffa8;
+  background-color: #d3d3d3;
   width: 100%;
   max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.5rem;
   position: absolute;
   bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.controls-title {
+  color: #fff;
+  text-align: center;
+  background-color: #00f;
+  border: 2px solid #fff;
+  border-color: #fff #fff #000 #000;
+  width: 100%;
+  padding: .5rem;
+  font-weight: bold;
+}
+
+.controls-group {
+  border: 1px solid #000;
+  margin: 1rem;
+  padding: .5rem;
+}
+
+.controls-heading {
+  background-color: #d3d3d3;
+  width: auto;
+  margin-bottom: -.5rem;
+  padding: 0 .25em;
+  display: inline-block;
+  position: relative;
+  top: -.8em;
+}
+
+.controls-list {
+  gap: 1rem;
+  display: flex;
 }
 /*# sourceMappingURL=starfield.b64216b9.css.map */
