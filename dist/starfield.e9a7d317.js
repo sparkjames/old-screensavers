@@ -661,7 +661,11 @@ const theVoid = document.querySelector(".the-void");
  * @return object Star HTML element with updated CSS properties.
  */ function moveStar(star) {
     // Set a random time (in seconds) for the transition, so some stars will be fast and others slow.
-    transition_seconds = getRandomIntInclusive(7, 30);
+    // TODO: Work the value of input.controls-slide--quantity into the transition number(s) here.
+    const multiplier = parseInt(document.querySelector(".controls-slide--quantity").value) * .01;
+    const transition_min = 7 * multiplier;
+    const transition_max = 30 * multiplier;
+    transition_seconds = getRandomIntInclusive(transition_min, transition_max);
     star.style.transition = `transform ${transition_seconds}s linear, opacity ${transition_seconds / 2}s linear`;
     // Replace the Z transform value and set the opacity to triger the transition animation.
     star.style.transform = star.style.transform.replace(", 0px)", `, ${star_z_distance})`);
@@ -689,7 +693,7 @@ const theVoid = document.querySelector(".the-void");
     star.style.opacity = "0"; // '0.5'
     star.style.transition = "none";
     // Get a random number of miliseconds to delay triggering the movement on this star.
-    star_appear_timeout = getRandomIntInclusive(10, 4000);
+    let star_appear_timeout = getRandomIntInclusive(10, 4000);
     // Move the star after the random delay.
     setTimeout(()=>{
         moveStar(star);
@@ -726,6 +730,11 @@ const graphicToggles = document.querySelectorAll(".controls-radio--graphic");
 graphicToggles.forEach((el)=>{
     el.addEventListener("change", graphicTogglesOnChange);
 });
+const warpSpeedOnChange = (e)=>{
+    console.log(e.target.value);
+};
+const warpSpeedSlider = document.querySelector(".controls-slide--quantity");
+warpSpeedSlider.addEventListener("change", warpSpeedOnChange);
 
 },{}]},["7WgsS","hQ4aG"], "hQ4aG", "parcelRequire94c2")
 
