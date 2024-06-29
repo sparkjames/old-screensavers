@@ -732,6 +732,22 @@ graphicToggles.forEach((el)=>{
 });
 const warpSpeedOnChange = (e)=>{
     console.log(e.target.value);
+    const multiplier = parseInt(e.target.value) * 0.01;
+    stars.map((star)=>{
+        // star = resetStarPosition(star);
+        // console.log(star.style.transitionDuration);
+        let durations = star.style.transitionDuration.split(", ");
+        console.log("durations = ", durations);
+        durations = durations.map((durationString)=>{
+            // console.log('durationString = ', durationString);
+            const time = parseInt(durationString.split("s")[0]) * multiplier;
+            // console.log('time = ', time);
+            return `${time}s`;
+        });
+        console.log("new durations = ", durations);
+        star.style.transitionDuration = durations.join(", ");
+        return star;
+    });
 };
 const warpSpeedSlider = document.querySelector(".controls-slide--quantity");
 warpSpeedSlider.addEventListener("change", warpSpeedOnChange);
