@@ -107,3 +107,13 @@ body {
 	display: flex;
 	gap: 1rem;
 }
+
+.controls-slide-labels {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+.controls-slide {
+	width: 100%;
+}

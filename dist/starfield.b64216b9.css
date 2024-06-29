@@ -138,4 +138,14 @@ body {
   gap: 1rem;
   display: flex;
 }
+
+.controls-slide-labels {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  display: flex;
+}
+
+.controls-slide {
+  width: 100%;
+}
 /*# sourceMappingURL=starfield.b64216b9.css.map */
