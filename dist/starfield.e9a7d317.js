@@ -736,16 +736,28 @@ const warpSpeedOnChange = (e)=>{
     stars.map((star)=>{
         // star = resetStarPosition(star);
         // console.log(star.style.transitionDuration);
-        let durations = star.style.transitionDuration.split(", ");
-        console.log("durations = ", durations);
-        durations = durations.map((durationString)=>{
-            // console.log('durationString = ', durationString);
-            const time = parseInt(durationString.split("s")[0]) * multiplier;
-            // console.log('time = ', time);
-            return `${time}s`;
-        });
-        console.log("new durations = ", durations);
-        star.style.transitionDuration = durations.join(", ");
+        let transitionValues = star.style.transitionDuration.split(", ");
+        console.log("transitionValues = ", transitionValues);
+        // If the star is currently in motion, it will have 2 items in the transitionValues array. One value for transition duration and one value for transition delay. Otherwise it just has one item with a value of '0s'.
+        if (transitionValues.length > 1) {
+            transitionValues = transitionValues.map((timeString)=>{
+                // console.log('timeString = ', timeString);
+                const time = parseInt(timeString.split("s")[0]) * multiplier;
+                // console.log('time = ', time);
+                return `${time}s`;
+            });
+            console.log("new transitionValues = ", transitionValues);
+            star.style.transitionDuration = transitionValues.join(", ");
+            // if ( star.style.opacity === 1 ) {
+            // 	star.style.opacity = 0.99;
+            // } else {
+            // 	star.style.opacity = 1;
+            // }
+            if (star.style.transform.indexOf(`, ${star_z_distance})`) > -1) {
+                console.log("update transform");
+                star.style.transform = star.style.transform.replace(`, ${star_z_distance})`, `, ${star_z_distance + 1})`);
+            } else star.style.transform = star.style.transform.replace(`, ${star_z_distance + 1})`, `, ${star_z_distance})`);
+        }
         return star;
     });
 };
